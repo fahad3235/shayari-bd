@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shayari BD - Short Bangla Shayaris to Share</title>
+<meta name="description" content="Offline bilingual Bangla shayari collection: 48 original short shayaris in 6 categories, in Bengali script and Roman, with favourites, copy and share.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+  <header class="app-header">
+    <div class="brand">
+      <h1 data-i18n="appTitle">Shayari BD</h1>
+      <p class="tagline" data-i18n="appTagline">A pocket book of short, warm shayaris in Bangla and Roman - written for this app, ready to send to the people you love.</p>
+    </div>
+    <div class="header-btns">
+      <button id="scriptToggle" class="pill-btn" type="button">Roman</button>
+      <button id="langToggle" class="pill-btn" type="button">Bangla</button>
+    </div>
+  </header>
+
+  <section class="stats" aria-label="Collection stats">
+    <div class="stat">
+      <span class="stat-label" data-i18n="statTotal">Shayaris</span>
+      <span class="stat-value" id="statTotal">48</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label" data-i18n="statFavs">Favourites</span>
+      <span class="stat-value" id="statFavs">0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label" data-i18n="statCats">Categories</span>
+      <span class="stat-value" id="statCats">6</span>
+    </div>
+  </section>
+
+  <section class="hero" aria-label="Shayari of the day">
+    <p class="hero-kicker"><span data-i18n="heroTitle">Aajker Shayari</span> <span class="hero-sub" data-i18n="heroSub">Shayari of the day</span></p>
+    <p class="hero-cat" id="heroCat"></p>
+    <p class="hero-text" id="heroText"></p>
+    <div class="btn-row">
+      <button id="shuffleBtn" class="btn btn-primary" type="button" data-i18n="shuffleBtn">Ar ekta - Shuffle</button>
+      <button id="heroFavBtn" class="btn btn-fav" type="button" aria-pressed="false">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="#c0392b" stroke-width="2" d="M12 21s-7.5-4.7-10-9.3C.4 8.6 2.4 5 5.7 5c2 0 3.4 1.1 4.3 2.4h4C15 6.1 16.4 5 18.4 5c3.3 0 5.3 3.6 3.7 6.7C19.5 16.3 12 21 12 21z"/></svg>
+        <span data-i18n="favBtn">Favourite</span>
+      </button>
+      <button id="heroCopyBtn" class="btn" type="button" data-i18n="copyBtn">Copy</button>
+      <button id="heroShareBtn" class="btn" type="button" data-i18n="shareBtn">Share</button>
+    </div>
+  </section>
+
+  <main>
+    <div class="toolbar">
+      <input id="searchInput" type="search" data-i18n-ph="searchPlaceholder" placeholder="Search shayaris (Bangla, Roman or category)..." aria-label="Search shayaris">
+    </div>
+    <div id="filterChips" class="chips" role="group" aria-label="Filter by category"></div>
+    <div id="shayariList" class="shayari-list"></div>
+    <p class="empty" id="emptyState" hidden></p>
+
+    <section class="card" aria-label="Favourites data">
+      <h2 data-i18n="dataTitle">Your favourites - export, import, erase</h2>
+      <p class="note" data-i18n="dataExportHint">Downloads a JSON file with your favourite shayari ids.</p>
+      <div class="btn-row">
+        <button id="exportBtn" class="btn" type="button" data-i18n="dataExport">Export favourites</button>
+      </div>
+      <p class="note" data-i18n="dataImportHint">Import a favourites JSON file exported from this app.</p>
+      <div class="btn-row">
+        <label class="btn" for="importFile" data-i18n="dataImportBtn">Import JSON</label>
+        <input id="importFile" type="file" accept="application/json,.json" class="visually-hidden">
+      </div>
+      <p class="msg" id="importMsg" role="status"></p>
+    </section>
+
+    <section class="card danger-card" aria-label="Erase favourites">
+      <h2 data-i18n="dataErase">Erase all favourites</h2>
+      <p class="note" data-i18n="dataEraseHint">Type DELETE to remove all your favourites. The 48 shayaris stay.</p>
+      <input id="eraseInput" type="text" data-i18n-ph="dataErasePlaceholder" placeholder="Type DELETE">
+      <div class="btn-row">
+        <button id="eraseBtn" class="btn btn-danger" type="button" data-i18n="dataEraseBtn">Erase favourites</button>
+      </div>
+      <p class="msg" id="eraseMsg" role="status"></p>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p data-i18n="footerNote">All 48 shayaris are original lines written for this app. This is a personal-use collection, not a book of quotations - the lines are not taken from any poet, song or famous shayari.</p>
+    <p data-i18n="footerOffline">Works fully offline. No account, no network requests, no tracking.</p>
+  </footer>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="js/data.js"></script>
+<script src="js/logic.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
