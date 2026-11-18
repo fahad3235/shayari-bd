@@ -1,6 +1,6 @@
 # Shayari BD - Test Results
 
-Run #369, 12:00 slot, 2026-11-18. All figures below are real, recorded from actual runs.
+Run #372, 12:00 slot, 2026-11-18. All figures below are real, recorded from actual runs.
 
 ## 1. Hand-verified expectations table
 

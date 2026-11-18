@@ -54,7 +54,7 @@ node --test tests/test.js
 node tests/smoke.mjs
 ```
 
-Test results: **23/23 unit tests pass, 41/41 smoke checks pass** at 1280px and 390px, 0 console errors, 0 page exceptions (2026-11-18, run #369). Full hand-verified expectations and results are in `TEST_RESULTS.md`.
+Test results: **23/23 unit tests pass, 41/41 smoke checks pass** at 1280px and 390px, 0 console errors, 0 page exceptions (2026-11-18, factory run #372). Full hand-verified expectations and results are in `TEST_RESULTS.md`.
 
 ## Deployment
 
@@ -69,4 +69,4 @@ Static site - deploy the repository root to GitHub Pages (Settings -> Pages -> D
 
 ## Status
 
-Complete MVP, published and verified 2026-11-18 (factory run #369). MIT-style free use for personal sharing; the shayaris in this app are original works, please credit Shayari BD if you republish them.
+Complete MVP, published and verified 2026-11-18 (factory run #372). MIT-style free use for personal sharing; the shayaris in this app are original works, please credit Shayari BD if you republish them.
